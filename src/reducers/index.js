@@ -13,7 +13,7 @@ const INITIAL_STATE = {
   todos: []
 };
 
-const todoApp = (state = INITIAL_STATE, action) => {
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SET_VISIBLE_FILTER:
       return {
@@ -33,7 +33,7 @@ const todoApp = (state = INITIAL_STATE, action) => {
         ]
       };
     // I don't understand this
-    case TOGGLE_TODO:
+    case TOGGLE_ITEM:
       return Object.assign({}, state, {
         todos: state.todos.map((todo, index) => {
           if (index === action.index) {
